@@ -1,0 +1,36 @@
+<ion-header >
+  <ion-toolbar class="header-menu">
+    <ion-buttons slot="start" *ngIf="menu_button_visible" class="border_button">
+      <ion-menu-button class="rstar-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title *ngIf="title_section_visible && !back_button_visible && !menu_button_visible" class="ion-text-center">
+        {{title}}
+    </ion-title>
+    <ion-title *ngIf="title_section_visible && (back_button_visible || menu_button_visible)" >
+      {{title}}
+    </ion-title>
+    
+    <ion-title *ngIf="notification_show" slot="end" (click)="goToPage('notifications')"><ion-badge color="danger" style="position: absolute;
+      bottom: 18px;
+      right: 17px;
+      z-index: 99999;
+      border-radius: 12px;" *ngIf="notification_count!=0">{{notification_count}}</ion-badge>
+      <ion-icon ios="ios-notifications" md="md-notifications" style="font-size: 26px;margin-top: 5px;" ></ion-icon></ion-title>
+    <ion-title *ngIf="referral_bal_show" slot="end">Earn : <fa-icon [icon]="['fas','rupee-sign']" size="1x" class="rstar-icon"></fa-icon> {{referral_balance}}</ion-title>
+    <ion-buttons slot="start" *ngIf="back_button_visible" class="border_button">
+
+      <ion-back-button defaultHref="home"  (click)="back()" *ngIf="back_button_visible_click"></ion-back-button>
+      <ion-back-button defaultHref="home"  *ngIf="!back_button_visible_click"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons (click)="openCartPage()" slot="end" *ngIf="cart_button_visible">
+      <ion-icon name="cart" slot="end" padding></ion-icon>
+      <ion-badge id="cart-badge" color="danger" size="small" *ngIf="product_count_on_cart!=0">{{product_count_on_cart}}</ion-badge>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="search_section_visible">
+    <ion-searchbar type="text" debounce="500" (ionFocus)="openSearchModal()"  class="_c_searchbar_home" placeholder="Search For Products"></ion-searchbar>
+  </ion-toolbar>
+  <div class="{{network_check_class}}" *ngIf="network_check_class_show" [style.background]="network_check_class=='disconnect'?'red':'#4CAF50'">{{network_msg}}</div>
+</ion-header>
+
+

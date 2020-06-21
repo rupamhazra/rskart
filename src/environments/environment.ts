@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiEndpoint: 'http://localhost/rskart-ionic/api/',
+  imageURL: 'http://localhost/rskart-ionic/uploads/',
+  fcmEndpoint: 'https://fcm.googleapis.com/fcm/'
 };
 
 /*

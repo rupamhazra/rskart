@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar style="padding:0 10px 0px 0px;">
+      <ion-searchbar type="text" debounce="1100" (ionChange)="updateSearchResults($event)"  #input [(placeholder)]="search_placeholder"></ion-searchbar>
+      <fa-icon icon="microphone" size="1x" class="rstar-icon" slot="end" style="margin: 0 8px;" (click)="startListing(which_type_search)"></fa-icon>
+      <ion-buttons slot="start" class="border_button">
+        <ion-back-button defaultHref="home"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+<!-- <ion-content>
+  <div>
+   
+    <ion-list *ngIf="isItemAvailable">
+      <ion-item *ngFor="let item of search_items">
+        <ion-label (click)="searchProduct(item)">{{ item.name }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content> -->
+<ion-content>
+  <ion-progress-bar type="indeterminate" class="progress_bar" *ngIf="progress_bar"></ion-progress-bar>
+  <ion-list [hidden]="autocompleteItems.length == 0" class="ion-list-class" *ngIf="showList">
+    <ion-item *ngFor="let item of autocompleteItems" tappable class="item-class" (click)="selectSearchLocation(item.description)">
+      <ion-thumbnail slot="start">
+        <ion-img src="{{mediaUrl+item.image_small}}"></ion-img>
+      </ion-thumbnail>
+     
+      <ion-label>
+        <h3>{{ item.name}}</h3>
+        <p><ion-text color="primary">in {{item.category_name}}</ion-text></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-text color="danger" *ngIf="isNoItemAvailable" >
+    <p style="text-align: center;">No location Found</p>
+  </ion-text>
+</ion-content>
+
