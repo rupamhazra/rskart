@@ -61,8 +61,8 @@ export class HomePage implements OnInit {
 
     });
     //this.loadingService.present();
-    this.readSliders();
-    this.readCategories();
+    //this.readSliders();
+    //this.readCategories();
     this.readProducts();
     //this.loadingService.dismiss();
   }

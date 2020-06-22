@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiEndpoint: 'http://localhost/rskart-ionic/api/',
-  imageURL: 'http://localhost/rskart-ionic/uploads/',
+  apiEndpoint: 'http://tobuekalabya.com/rskart/api/',
+  imageURL: 'http://tobuekalabya.com/rskart/uploads/',
   fcmEndpoint: 'https://fcm.googleapis.com/fcm/'
 };
 

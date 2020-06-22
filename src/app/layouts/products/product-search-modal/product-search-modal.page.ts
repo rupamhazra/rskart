@@ -43,27 +43,27 @@ export class ProductSearchModalPage implements OnInit {
     // }, 150);
     // this.readProducts()
   }
-  readProducts() {
-    //this.loadingService.present();
-    //this.categories =[];
-    this.productService.readProducts().subscribe(
-      res => {
-        this.result = res.result;
-        //this.result_slide = res.result;
-        //console.log("result",this.result);
-        //this.loadingService.dismiss();
-        //console.log("afterrrrrrrrrrrr");
+  // readProducts() {
+  //   //this.loadingService.present();
+  //   //this.categories =[];
+  //   this.productService.readProducts().subscribe(
+  //     res => {
+  //       this.result = res.result;
+  //       //this.result_slide = res.result;
+  //       //console.log("result",this.result);
+  //       //this.loadingService.dismiss();
+  //       //console.log("afterrrrrrrrrrrr");
 
-      },
-      error => {
-        console.log("error::::" + error);
-        //this.loadingService.dismiss();
+  //     },
+  //     error => {
+  //       console.log("error::::" + error);
+  //       //this.loadingService.dismiss();
 
-        this.toasterService.showToast(error.error.msg, 2000)
+  //       this.toasterService.showToast(error.error.msg, 2000)
 
-      }
-    )
-  }
+  //     }
+  //   )
+  // }
 
 
   getItems(ev: any, item_val: any) {
