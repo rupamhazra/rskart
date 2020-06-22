@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit {
 
   }
   ngOnInit() {
-    //console.log("current Link", this.router.url);
+    console.log("current Link", this.router.url);
     if (this.router.url.includes('register')) {
       this.menu_button_visible = false;
       this.title_section_visible = true;
@@ -71,7 +71,7 @@ export class HeaderComponent implements OnInit {
       this.back_button_visible = true;
       this.back_button_visible_click = false;
     }
-    if (this.router.url.includes('home')) {
+    if (this.router.url.includes('shop')) {
 
       this.menu_button_visible = true;
       this.title_section_visible = true;
@@ -95,6 +95,7 @@ export class HeaderComponent implements OnInit {
       this.cart_button_visible = true;
       this.menu_button_visible = false;
       this.title_section_visible = false;
+      this.back_button_visible = true;
       //this.title = "My Categories";
     }
     if (this.router.url.includes('product-list')) {
@@ -208,24 +209,7 @@ export class HeaderComponent implements OnInit {
       this.title_section_visible = true;
       this.title = "Today's Rides";
     }
-    if (this.router.url.includes('tour-travels')) {
-      this.menu_button_visible = false;
-      this.title_section_visible = true;
-      this.title = "Tour and Travels";
-    }
-    if (this.router.url.includes('tour-details')) {
-      this.menu_button_visible = false;
-      this.title_section_visible = true;
-      this.title = "Tour Details";
-    }
-    if (this.router.url.includes('tour-details-package-form')) {
-      this.title_section_visible = true;
-      this.title = "";
-    }
-    if (this.router.url.includes('school-pool-car')) {
-      this.title_section_visible = true;
-      this.title = "School Pull Car";
-    }
+
   }
   getBalance(userId) {
     let request_data = { "type": 'referral_balance', "user_id": userId, }

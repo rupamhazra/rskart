@@ -15,11 +15,14 @@ export class ProductService {
       })
     }
   }
+  readCategories(): Observable<any> {
+    return this.http.get(environment.apiEndpoint + 'productCategoryList');
+  }
   readProducts(data: any, limit, page): Observable<any> {
     return this.http.post(environment.apiEndpoint + 'productslist' + '/' + limit + '/' + page, data);
   }
   getProduct(id: number): Observable<any> {
-    return this.http.get(environment.apiEndpoint + 'read.php?module_type=products&module_type_id=' + id);
+    return this.http.get(environment.apiEndpoint + 'productdetails/' + id);
   }
   addDetailsToCart(data: any): Observable<any> {
     return this.http.post(environment.apiEndpoint + 'create.php?module_type=cart', data);

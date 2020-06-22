@@ -10,19 +10,19 @@ const routes: Routes = [
   },
   {
     path: 'product-details',
-    loadChildren: () => import('./product-details/product-details.module').then( m => m.ProductDetailsPageModule)
+    loadChildren: () => import('./product-details/product-details.module').then(m => m.ProductDetailsPageModule)
   },
   {
     path: 'product-search-modal',
-    loadChildren: () => import('./product-search-modal/product-search-modal.module').then( m => m.ProductSearchModalPageModule)
+    loadChildren: () => import('./product-search-modal/product-search-modal.module').then(m => m.ProductSearchModalPageModule)
   },
   {
     path: 'product-list',
-    loadChildren: () => import('./product-list/product-list.module').then( m => m.ProductListPageModule)
+    loadChildren: () => import('./product-list/product-list.module').then(m => m.ProductListPageModule)
   },
   {
-    path: 'product-single',
-    loadChildren: () => import('./product-single/product-single.module').then( m => m.ProductSinglePageModule)
+    path: 'product-single/:id',
+    loadChildren: () => import('./product-single/product-single.module').then(m => m.ProductSinglePageModule)
   }
 ];
 
@@ -30,4 +30,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ProductsPageRoutingModule {}
+export class ProductsPageRoutingModule { }

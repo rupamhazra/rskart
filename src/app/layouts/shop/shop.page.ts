@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
 import { ProductService } from '../../core/services/product.service';
-import { CategoryService } from '../../core/services/category.service';
 import { SliderService } from '../../core/services/slider.service';
 import { environment } from 'src/environments/environment';
 import { SpeechRecognition } from '@ionic-native/speech-recognition/ngx';
@@ -10,10 +9,10 @@ import { ModalService, ToasterService, LoadingService } from '../../core/globalM
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss', '../layouts.page.scss'],
+  templateUrl: './shop.page.html',
+  styleUrls: ['./shop.page.scss', '../layouts.page.scss'],
 })
-export class HomePage implements OnInit {
+export class ShopPage implements OnInit {
   color: string = 'green';
   name: any;
   title: any;
@@ -22,51 +21,40 @@ export class HomePage implements OnInit {
   result: [];
   result_cat: [];
   result_slide: [];
-  slideOpts = {
-    initialSlide: 1,
-    speed: 400,
-    autoplay: true
-  };
+  // slideOpts = {
+  //   initialSlide: 1,
+  //   speed: 400,
+  //   autoplay: true
+  // };
   slideOpts1 = {
     initialSlide: 1,
-    speed: 400,
-    slidesPerView: 4,
-
+    speed: 200,
+    slidesPerView: 5,
 
   };
-
   constructor(
     private storage: Storage,
     private router: Router,
     public loadingService: LoadingService,
     private productService: ProductService,
     private toasterService: ToasterService,
-    private categoryService: CategoryService,
     private sliderService: SliderService,
     private speechRecognition: SpeechRecognition,
     public modalService: ModalService,
 
   ) { }
-
   ngOnInit() {
-
-
-
-
     //console.log('this.router.url', this.router.url);
     this.title = this.router.url;
     this.storage.get('USER_INFO').then((val) => {
-
       if (val) this.name = val.name
-
     });
     //this.loadingService.present();
     //this.readSliders();
-    //this.readCategories();
+    this.readCategories();
     this.readProducts();
     //this.loadingService.dismiss();
   }
-
   readSliders() {
     this.loadingService.present();
     //this.categories =[];
@@ -91,7 +79,7 @@ export class HomePage implements OnInit {
   readCategories() {
     //this.loadingService.present();
     //this.categories =[];
-    this.categoryService.readCategories().subscribe(
+    this.productService.readCategories().subscribe(
       res => {
         this.result_cat = res.result;
         //console.log("result_cat",this.result_cat);
@@ -104,7 +92,6 @@ export class HomePage implements OnInit {
         //this.loadingService.dismiss();
         this.visibleKey = true;
         this.toasterService.showToast(error.error.msg, 2000)
-
       }
     )
   }
@@ -115,7 +102,6 @@ export class HomePage implements OnInit {
         //console.log('res.result', res.result.length)
         this.result = res.result;
         this.visibleKey = true;
-
         //}
       },
       error => {
@@ -127,7 +113,6 @@ export class HomePage implements OnInit {
   }
   getProduct(id) {
     //console.log('id====',id)
-    this.router.navigateByUrl('/products/product-single/' + id);
+    this.router.navigateByUrl('products/product-single/' + id);
   }
-
 }

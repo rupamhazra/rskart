@@ -42,21 +42,21 @@ export class AppComponent {
   getMenu() {
     this.appPages = [
       {
-        title: 'Home',
-        url: 'home',
-        icon: './assets/svg/home.svg',
+        title: 'Shop',
+        url: 'shop',
+        icon: 'basket-outline',
         chileMenu: []
       },
       {
         title: 'My Account',
         url: 'my-account',
-        icon: './assets/svg/user1.svg',
+        icon: 'person-circle-outline',
         chileMenu: []
       },
       {
         title: 'Settings',
         url: 'settings',
-        icon: './assets/svg/user1.svg',
+        icon: 'settings-outline',
         chileMenu: []
       },
 
@@ -66,15 +66,15 @@ export class AppComponent {
   getTab() {
     this.tabs = [
       {
-        title: 'Home',
-        url: 'home',
-        icon: './assets/svg/home.svg',
+        title: 'Shop',
+        url: 'shop',
+        icon: 'basket-outline',
         chileMenu: []
       },
       {
         title: 'My Account',
         url: 'my-account',
-        icon: './assets/svg/user1.svg',
+        icon: 'person-circle-outline',
         chileMenu: []
       },
     ];

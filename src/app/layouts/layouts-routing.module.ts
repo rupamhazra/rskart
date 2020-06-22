@@ -10,12 +10,12 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: "home",
+        redirectTo: "shop",
         pathMatch: "full"
       },
       {
-        path: 'home',
-        loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+        path: 'shop',
+        loadChildren: () => import('./shop/shop.module').then(m => m.ShopPageModule)
       },
       {
         path: 'my-account',

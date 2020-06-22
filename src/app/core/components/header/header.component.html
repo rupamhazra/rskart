@@ -19,8 +19,8 @@
     <ion-title *ngIf="referral_bal_show" slot="end">Earn : <fa-icon [icon]="['fas','rupee-sign']" size="1x" class="rstar-icon"></fa-icon> {{referral_balance}}</ion-title>
     <ion-buttons slot="start" *ngIf="back_button_visible" class="border_button">
 
-      <ion-back-button defaultHref="home"  (click)="back()" *ngIf="back_button_visible_click"></ion-back-button>
-      <ion-back-button defaultHref="home"  *ngIf="!back_button_visible_click"></ion-back-button>
+      <ion-back-button defaultHref="shop"  (click)="back()" *ngIf="back_button_visible_click"></ion-back-button>
+      <ion-back-button defaultHref="shop"  *ngIf="!back_button_visible_click"></ion-back-button>
     </ion-buttons>
     <ion-buttons (click)="openCartPage()" slot="end" *ngIf="cart_button_visible">
       <ion-icon name="cart" slot="end" padding></ion-icon>
