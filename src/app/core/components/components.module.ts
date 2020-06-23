@@ -32,6 +32,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   exports: [
     HeaderComponent,
+    FontAwesomeModule
     // MatFormFieldModule,
     // MatInputModule,
     // MatIconModule,

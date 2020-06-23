@@ -18,7 +18,7 @@ import { Storage } from '@ionic/storage';
 export class ProductSinglePage implements OnInit {
   //product_count:number;
   productId: number;
-  productDetails: any;
+  productDetails: any = {};
   visibleKey: boolean = false;
   medie_url: any = environment.imageURL;
   mainImage: any;
@@ -40,7 +40,8 @@ export class ProductSinglePage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.productId = this.route.snapshot.params['id']
+    this.productId = this.route.snapshot.params['id'];
+    console.log('productId', this.productId)
     this.storage.get('allProductDetailsInCart').then((val) => {
       if (val) {
         val.forEach(element => {
@@ -60,7 +61,7 @@ export class ProductSinglePage implements OnInit {
     this.productService.getProduct(this.productId).subscribe(
       res => {
         this.productDetails = res.result;
-        this.mainImage = this.productDetails.img
+        this.mainImage = this.productDetails.image_large;
         //console.log(this.productDetails);
         //console.log("visibleKey ====="+this.visibleKey);
         this.loadingService.dismiss();
@@ -83,10 +84,10 @@ export class ProductSinglePage implements OnInit {
     //this.loadingService.dismiss();
   }
   chnageProductImage(event: any, image_name) {
-    console.log('enevt', event)
+    //console.log('enevt', event)
     //console.log('image_name',image_name)
     //this.mainImageClass += " sddsdsd";
-    event.path[0].parent = '_c_img_focus_b';
+    //event.path[0].parent = '_c_img_focus_b';
     //event.path[0].style = "border: 2px solid red;";
     this.mainImage = image_name;
   }

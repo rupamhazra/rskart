@@ -147,7 +147,7 @@ export class ProductSearchModalPage implements OnInit {
   }
   getDropLocations(val) {
     let request_data = {};
-    this.productService.readProducts(request_data, 10, 1).subscribe(
+    this.productService.searchProducts(val).subscribe(
       res => {
         //console.log('res.result', res.result.length)
         this.autocompleteItems = res.result;

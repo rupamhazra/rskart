@@ -18,6 +18,9 @@ export class ProductService {
   readCategories(): Observable<any> {
     return this.http.get(environment.apiEndpoint + 'productcategorylist');
   }
+  searchProducts(search_key): Observable<any> {
+    return this.http.get(environment.apiEndpoint + 'productsListSearch/?search_key=' + search_key);
+  }
   readProducts(data: any, limit, page): Observable<any> {
     return this.http.post(environment.apiEndpoint + 'productslist' + '/' + limit + '/' + page, data);
   }

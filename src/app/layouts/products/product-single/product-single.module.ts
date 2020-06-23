@@ -8,7 +8,7 @@ import { ProductSinglePageRoutingModule } from './product-single-routing.module'
 
 import { ProductSinglePage } from './product-single.page';
 import { ComponentsModule } from "../../../core/components/components.module";
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   imports: [
@@ -16,8 +16,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormsModule,
     IonicModule,
     ProductSinglePageRoutingModule,
-    ComponentsModule,
-    FontAwesomeModule
+    ComponentsModule
   ],
   declarations: [ProductSinglePage]
 })
