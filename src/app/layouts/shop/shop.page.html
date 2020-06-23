@@ -1,5 +1,6 @@
 <app-header></app-header>
 <ion-content>
+<ion-progress-bar type="indeterminate" class="progress_bar" *ngIf="progress_bar"></ion-progress-bar>
   <div *ngIf="visibleKey" class="category-list-div" margin-bottom>
     <ion-card class="_c_card-cl-bag  _c_card-cl-ma-r-l-b-n">
         <ion-slides pager="false" [options]="slideOpts1">

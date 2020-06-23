@@ -16,7 +16,7 @@ export class ProductService {
     }
   }
   readCategories(): Observable<any> {
-    return this.http.get(environment.apiEndpoint + 'productCategoryList');
+    return this.http.get(environment.apiEndpoint + 'productcategorylist');
   }
   readProducts(data: any, limit, page): Observable<any> {
     return this.http.post(environment.apiEndpoint + 'productslist' + '/' + limit + '/' + page, data);

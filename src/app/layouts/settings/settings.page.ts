@@ -11,7 +11,11 @@ export class SettingsPage implements OnInit {
   constructor(
     private storage: Storage,
   ) {
-
+	this.storage.get('dark').then((val)=>{
+		console.log('val',val,typeof(val))
+		if(val == true)
+			this.dark = true
+	});
   }
 
   ngOnInit() {
