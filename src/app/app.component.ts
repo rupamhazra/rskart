@@ -23,7 +23,7 @@ export class AppComponent {
   ) {
     this.initializeApp();
     this.storage.get('dark').then((val) => {
-      console.log('dark', val)
+      //console.log('dark', val)
       if (val != '' && val == true)
         document.body.classList.toggle('dark', true);
     });

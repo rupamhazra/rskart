@@ -57,6 +57,14 @@ export class ShopPage implements OnInit {
     this.readProducts();
     //this.loadingService.dismiss();
   }
+  doRefresh(event) {  
+    console.log('Pull Event Triggered!');  
+    setTimeout(() => {
+    this.readProducts();
+    this.readCategories();
+    event.target.complete();
+    }, 1500); 
+   }  
   readSliders() {
     this.loadingService.present();
     //this.categories =[];
