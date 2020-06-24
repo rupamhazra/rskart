@@ -8,13 +8,16 @@ import { CartPageRoutingModule } from './cart-routing.module';
 
 import { CartPage } from './cart.page';
 
+import { ComponentsModule } from "../../core/components/components.module";
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CartPageRoutingModule
+    CartPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [CartPage]
 })
-export class CartPageModule {}
+export class CartPageModule { }

@@ -82,6 +82,7 @@ export class HeaderComponent implements OnInit {
     if (this.router.url.includes('cart')) {
       this.cart_button_visible = false;
       this.menu_button_visible = false;
+      this.back_button_visible = true;
       this.title_section_visible = true;
       this.title = "My Cart";
     }

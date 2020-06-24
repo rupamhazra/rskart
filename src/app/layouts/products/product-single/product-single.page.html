@@ -19,23 +19,16 @@
   <ion-card>
     <ion-card-content>
       <h1 class="h1_class">Highlights</h1>
-      
-        <li><ion-text>{{productDetails.description}}</ion-text></li>
-      
+      <li><ion-text>{{productDetails.description}}</ion-text></li>
     </ion-card-content>
   </ion-card>
-  <ion-segment class="_c_footer">
-    <ion-segment-button class="_c_ion-segment-button-back-white" (click)="addToCartEvent()" *ngIf="add_to_cart_btn_visible">
-        <ion-label>Add to Cart</ion-label>
-    </ion-segment-button>
-    <ion-segment-button  class="_c_ion-segment-button-back-white" (click)="goToCartEvent()" *ngIf="!add_to_cart_btn_visible">
-          <ion-label>Go To Cart</ion-label>
-    </ion-segment-button>
-    <ion-segment-button class="_c_ion-segment-button-back-tertiary">
-      <ion-label>Buy Now</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-    
+  <ion-card>
+    <ion-card-content class="card_content_extra_padding">
+      <ion-button size="default" expand="block" (click)="addToCartEvent()" *ngIf="add_to_cart_btn_visible">Add to Cart</ion-button>
+      <ion-button size="default" expand="block"  (click)="goToCartEvent()" *ngIf="!add_to_cart_btn_visible">Go To Cart</ion-button>
+      <ion-button size="default" expand="block" color="danger">Buy Now</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
 

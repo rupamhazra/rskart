@@ -11,8 +11,9 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-  tabs = [];
+  public selectedIndex = 0;
   appPages = [];
+  appPages2 = [];
   profile_img = '';
   name = '';
   constructor(
@@ -34,8 +35,6 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.getMenu();
-      this.getTab();
-
     });
   }
 
@@ -43,42 +42,39 @@ export class AppComponent {
     this.appPages = [
       {
         title: 'Shop',
-        url: 'shop',
-        icon: 'basket-outline',
+        url: 'home/shop',
+        icon: 'basket',
         chileMenu: []
       },
       {
         title: 'My Account',
-        url: 'my-account',
-        icon: 'person-circle-outline',
+        url: 'home/my-account',
+        icon: 'person-circle',
         chileMenu: []
       },
       {
         title: 'Settings',
         url: 'settings',
-        icon: 'settings-outline',
+        icon: 'settings',
+        chileMenu: []
+      },
+      {
+        title: 'My Wallet',
+        url: 'products',
+        icon: 'wallet',
+        chileMenu: []
+      },
+      {
+        title: 'Categories',
+        url: 'product-category',
+        icon: 'settings',
         chileMenu: []
       },
 
     ];
 
   }
-  getTab() {
-    this.tabs = [
-      {
-        title: 'Shop',
-        url: 'shop',
-        icon: 'basket-outline',
-        chileMenu: []
-      },
-      {
-        title: 'My Account',
-        url: 'my-account',
-        icon: 'person-circle-outline',
-        chileMenu: []
-      },
-    ];
 
-  }
+
 
 }

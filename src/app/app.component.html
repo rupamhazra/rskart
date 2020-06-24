@@ -1,69 +1,21 @@
 <ion-app>
-    <ion-split-pane>
-      <ion-tabs>
-        <ion-tab-bar slot="bottom">
-          <ion-tab-button tab="{{tab.url}}" *ngFor="let tab of tabs">
-            <ion-icon name="{{tab.icon}}"></ion-icon>
-            <ion-label>{{tab.title}}</ion-label>
-          </ion-tab-button>
-        </ion-tab-bar>
-      </ion-tabs>
-      <ion-menu contentId="content"  type="overlay">
-        <ion-header>
-          <ion-item>
-            <ion-toolbar class="header-menu">
-              <ion-avatar slot="start">
-                <img [(src)] = "profile_img" alt="" />
-              </ion-avatar> 
-              <div style="text-align: left;">
-              <p style="margin: 20px 0px 0px 15px;"></p>
-              <p style="margin: 5px 0px 20px 15px;font-size: 13px;"></p>
-              </div>
-            </ion-toolbar>
-         </ion-item>
-        </ion-header>
+    <ion-split-pane contentId="main-content">
+      <ion-menu contentId="main-content"  type="overlay">
         <ion-content padding> 
-          <div *ngFor="let p of appPages">
+          <ion-list id="inbox-list">
+            <ion-list-header>Inbox</ion-list-header>
+            <ion-note>hi@ionicframework.com</ion-note>
             <!-- Standard Menu Item -->
-            <ion-menu-toggle *ngIf="p.url">
-              <ion-item class="item-class"  [routerLink]="p.url" routerDirection="root" routerLinkActive="active">
+            <ion-menu-toggle auto-hide="false"  *ngFor="let p of appPages; let i = index">
+              <ion-item class="item-class"  (click)="selectedIndex = i"  lines="none" detail="false" [routerLink]="p.url" routerDirection="root" [class.selected]="selectedIndex == i">
                 <!-- <ion-icon [name]="p.icon" slot="start"></ion-icon> -->
-                <ion-icon name ="{{p.icon}}" slot="start"></ion-icon>
-                <ion-label>
-                  {{ p.title }}
-                </ion-label>
+                <ion-icon  slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+                <ion-label>{{ p.title }}</ion-label>
               </ion-item>
             </ion-menu-toggle>
-            <!-- Item with Children -->
-       
-            <ion-item class="item-class" button *ngIf="p.chileMenu?.length > 0" (click)="p.open = !p.open" [class.parent-active]="p.open" detail="false">
-              <ion-icon slot="start" name="arrow-forward" *ngIf="!p.open"></ion-icon>
-              <ion-icon slot="start" name="arrow-down" *ngIf="p.open"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
-            </ion-item>
-       
-            <!-- Children List for clicked Item -->
-            <ion-list *ngIf="p.open">
-              <ion-menu-toggle>
-                <ion-item *ngFor="let sub of p.chileMenu" class="sub-item" [routerLink]="sub.url" routerDirection="root"
-                  routerLinkActive="active">
-                  <!-- <ion-icon [name]="sub.icon" slot="start"></ion-icon> -->
-                  <ion-img [src] ="sub.icon" slot="start" style="width: 24px;"></ion-img>
-                  <ion-label>
-                    {{ sub.title }}
-                  </ion-label>
-                </ion-item>
-              </ion-menu-toggle>
-            </ion-list>
-          </div>
-          <!-- <div>
-            <ion-item (click)="giveRating()" class="item-class">
-              <fa-icon [icon]="['fas','star']" size="1x" class="rstar-icon" slot="start" style="width: 40px;font-size: 25px;margin-left: 2px;"></fa-icon>
-              <ion-label>Rate Us</ion-label>
-            </ion-item>
-          </div> -->
+          </ion-list>
         </ion-content>
       </ion-menu>
-      <ion-router-outlet id="content" main></ion-router-outlet>
-    </ion-split-pane>
+      <ion-router-outlet id="main-content"></ion-router-outlet>
+      </ion-split-pane>
 </ion-app>

@@ -10,17 +10,17 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: "shop",
+        redirectTo: "home",
         pathMatch: "full"
       },
       {
-        path: 'shop',
-        loadChildren: () => import('./shop/shop.module').then(m => m.ShopPageModule)
+        path: 'home',
+        loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
       },
-      {
-        path: 'my-account',
-        loadChildren: () => import('./my-account/my-account.module').then(m => m.MyAccountPageModule)
-      },
+      // {
+      //   path: 'my-account',
+      //   loadChildren: () => import('./my-account/my-account.module').then(m => m.MyAccountPageModule)
+      // },
       {
         path: 'settings',
         loadChildren: () => import('./settings/settings.module').then(m => m.SettingsPageModule)
