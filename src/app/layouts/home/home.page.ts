@@ -17,13 +17,25 @@ export class HomePage implements OnInit {
       {
         title: 'Shop',
         url: 'shop',
-        icon: 'basket-outline',
+        icon: 'basket',
         chileMenu: []
       },
       {
         title: 'My Account',
         url: 'my-account',
-        icon: 'person-circle-outline',
+        icon: 'person-circle',
+        chileMenu: []
+      },
+      {
+        title: 'My Cart',
+        url: 'cart',
+        icon: 'cart',
+        chileMenu: []
+      },
+      {
+        title: 'My WishList',
+        url: 'cart',
+        icon: 'heart',
         chileMenu: []
       },
     ];

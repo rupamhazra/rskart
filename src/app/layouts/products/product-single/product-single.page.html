@@ -1,6 +1,9 @@
 <app-header></app-header>
 <ion-content slot="fixed">
   <div *ngIf="visibleKey">
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+      <ion-icon ios="heart-outline" md="heart-sharp" size="large" color="danger" (click)="addToWishList()"></ion-icon>
+    </ion-fab>
     <ion-img [src]="this.medie_url+mainImage" class="" (click)="getProdcutSlider(productDetails.id)"></ion-img>
     <ion-grid no-padding>
       <ion-row text-center>
@@ -8,6 +11,7 @@
             <ion-thumbnail *ngIf="e_img">
               <ion-img [src]="this.medie_url+e_img" (click)="chnageProductImage($event,e_img)" [class]=""></ion-img>
             </ion-thumbnail>
+            
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -17,9 +21,15 @@
     <h4 size="small"><fa-icon icon="rupee-sign" size="1x" class="rstar-icon"></fa-icon> {{productDetails.price}}</h4>
   </div>
   <ion-card>
-    <ion-card-content>
-      <h1 class="h1_class">Highlights</h1>
-      <li><ion-text>{{productDetails.description}}</ion-text></li>
+    <ion-card-content class="no-padding">
+      <ion-list lines="none">
+        <ion-list-header>
+          <ion-label>Highlights</ion-label>
+        </ion-list-header>
+        <ion-item><p>{{productDetails.description}}</p></ion-item>
+        <ion-item><p>{{productDetails.description}}</p></ion-item>
+        <ion-item><p>{{productDetails.description}}</p></ion-item>
+      </ion-list>
     </ion-card-content>
   </ion-card>
   <ion-card>
