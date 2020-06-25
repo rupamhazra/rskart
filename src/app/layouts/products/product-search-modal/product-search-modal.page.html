@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar style="padding:0 10px 0px 0px;">
       <ion-searchbar type="text" debounce="1100" (ionChange)="updateSearchResults($event)"  #input [(placeholder)]="search_placeholder"></ion-searchbar>
-      <fa-icon icon="microphone" size="1x" class="rstar-icon" slot="end" style="margin: 0 8px;" (click)="startListing(which_type_search)"></fa-icon>
+      <fa-icon icon="microphone" size="1x" class="rstar-icon" slot="end" style="margin: 0 8px;" (click)="startListing()"></fa-icon>
       <ion-buttons slot="start" class="border_button">
         <ion-back-button defaultHref="shop"></ion-back-button>
       </ion-buttons>

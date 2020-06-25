@@ -13,7 +13,6 @@ import { Storage } from '@ionic/storage';
 export class AppComponent {
   public selectedIndex = 0;
   appPages = [];
-  appPages2 = [];
   profile_img = '';
   name = '';
   constructor(

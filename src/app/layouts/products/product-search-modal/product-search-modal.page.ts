@@ -115,7 +115,7 @@ export class ProductSearchModalPage implements OnInit {
       )
   }
 
-  startListing(which_type_search) {
+  startListing() {
     this.speechRecognition.startListening().subscribe((speeches) => {
       console.log('speeches', speeches)
       //this.updateSearchResults(speeches, which_type_search, true)
@@ -125,7 +125,7 @@ export class ProductSearchModalPage implements OnInit {
     })
   }
 
-  updateSearchResults(ev: any, which_type_search, voice = false) {
+  updateSearchResults(ev: any, voice = false) {
     this.isItemAvailable = false
     this.isNoItemAvailable = false;
     var val = ''
@@ -139,7 +139,6 @@ export class ProductSearchModalPage implements OnInit {
       return;
     }
     console.log('this.autocomplete.input', val);
-    console.log('which_type_serach', which_type_search);
     this.autocompleteItems = [];
     this.showList = true;
     this.getDropLocations(val);
