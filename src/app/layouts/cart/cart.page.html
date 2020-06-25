@@ -1,13 +1,13 @@
 <app-header></app-header>
 <ion-content>
   <div *ngIf="products_exits_on_cart">
-    <ion-card class="_c_card-cl-bag _c_card-cl-ma-r-l-b-n">
+    <ion-card class="">
       <ion-card-content>
         Delivery Address
       </ion-card-content>
     </ion-card>
     <ion-list>
-    <ion-card  *ngFor="let item of productList" class="_c_card-cl-bag _c_card-cl-ma-r-l-b-n">
+    <ion-card  *ngFor="let item of productList" class="">
         <ion-grid>
             <ion-row>
               <ion-col size="8">
@@ -15,7 +15,7 @@
                     <ion-card-title>{{item.name}}</ion-card-title>
                 </ion-card-header>
                 <ion-card-content>
-                    <ion-card-title><i class="fa fa-rupee"></i>{{item.unit_price}} </ion-card-title>
+                    <ion-card-title><fa-icon icon="rupee-sign" size="1x" class="rstar-icon"></fa-icon> {{item.price}} </ion-card-title>
                 </ion-card-content>
               </ion-col>
               <ion-col size="4">
@@ -56,7 +56,7 @@
   </div>
 </ion-content>
 <ion-footer *ngIf="products_exits_on_cart" style="background-color: #fff">
-    <ion-toolbar>
+    <ion-toolbar color="light">
         <ion-title style="color:#000;"><fa-icon icon="rupee-sign" size="1x" class="rstar-icon"></fa-icon> {{totalPrice}}</ion-title>
         <ion-button type="button" (click)="placeOrderEvent()"
         slot="end" style="margin: 0px 10px 0px 0px" shape="">Place Order</ion-button>

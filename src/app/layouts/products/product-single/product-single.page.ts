@@ -122,6 +122,9 @@ export class ProductSinglePage implements OnInit {
   goToCartEvent() {
     this.router.navigateByUrl('/cart');
   }
+  addToWishList(){
+    
+  }
 }
 
 

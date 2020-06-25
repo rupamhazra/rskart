@@ -70,6 +70,18 @@ export class AppComponent {
         icon: 'settings',
         chileMenu: []
       },
+      {
+        title: 'My Cart',
+        url: 'home/cart',
+        icon: 'cart',
+        chileMenu: []
+      },
+      {
+        title: 'My WishList',
+        url: 'home/cart',
+        icon: 'heart',
+        chileMenu: []
+      },
 
     ];
 
