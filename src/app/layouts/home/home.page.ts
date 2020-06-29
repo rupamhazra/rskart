@@ -34,7 +34,7 @@ export class HomePage implements OnInit {
       },
       {
         title: 'My WishList',
-        url: 'cart',
+        url: 'product-wishlist',
         icon: 'heart',
         chileMenu: []
       },

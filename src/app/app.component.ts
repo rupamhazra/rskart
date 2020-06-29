@@ -46,27 +46,21 @@ export class AppComponent {
         chileMenu: []
       },
       {
+        title: 'Shop By Category',
+        url: 'product-category',
+        icon: 'shirt',
+        chileMenu: []
+      },
+      {
         title: 'My Account',
         url: 'home/my-account',
         icon: 'person-circle',
         chileMenu: []
       },
       {
-        title: 'Settings',
-        url: 'settings',
-        icon: 'settings',
-        chileMenu: []
-      },
-      {
         title: 'My Wallet',
         url: 'products',
         icon: 'wallet',
-        chileMenu: []
-      },
-      {
-        title: 'Categories',
-        url: 'product-category',
-        icon: 'settings',
         chileMenu: []
       },
       {
@@ -77,8 +71,14 @@ export class AppComponent {
       },
       {
         title: 'My WishList',
-        url: 'home/cart',
+        url: 'home/product-wishlist',
         icon: 'heart',
+        chileMenu: []
+      },
+      {
+        title: 'Settings',
+        url: 'settings',
+        icon: 'settings',
         chileMenu: []
       },
 

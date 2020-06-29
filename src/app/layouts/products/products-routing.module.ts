@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'product-single/:id',
     loadChildren: () => import('./product-single/product-single.module').then(m => m.ProductSinglePageModule)
+  },
+  {
+    path: 'product-wishlist',
+    loadChildren: () => import('./product-wishlist/product-wishlist.module').then( m => m.ProductWishlistPageModule)
   }
 ];
 

@@ -86,11 +86,11 @@ export class HeaderComponent implements OnInit {
       this.title_section_visible = true;
       this.title = "My Cart";
     }
-    if (this.router.url.includes('categories')) {
+    if (this.router.url.includes('product-category')) {
       this.cart_button_visible = true;
-      this.menu_button_visible = false;
+      this.menu_button_visible = true;
       this.title_section_visible = true;
-      this.title = "My Categories";
+      this.title = "Shop By Category";
     }
     if (this.router.url.includes('product-single')) {
       this.cart_button_visible = true;
@@ -110,9 +110,11 @@ export class HeaderComponent implements OnInit {
       this.title_section_visible = true;
       this.title = "App settings";
     }
-    if (this.router.url.includes('date-time')) {
-      this.back_button_visible = true;
+    if (this.router.url.includes('product-wishlist')) {
+      this.cart_button_visible = true;
+      this.menu_button_visible = true;
       this.title_section_visible = true;
+      this.title = "My Wishlist";
     }
     if (this.router.url.includes('bus-route-details')) {
       this.back_button_visible = true;

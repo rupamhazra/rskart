@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { IonicModule } from '@ionic/angular';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AccordianComponent } from './accordian/accordian.component'
 // import {
 //   MatFormFieldModule,
 //   MatInputModule,
@@ -24,7 +25,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [HeaderComponent, AccordianComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -32,6 +33,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   exports: [
     HeaderComponent,
+    AccordianComponent,
     FontAwesomeModule,
     // MatFormFieldModule,
     // MatInputModule,

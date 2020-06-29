@@ -164,7 +164,7 @@ export class ProductSearchModalPage implements OnInit {
     //this.autocompleteItems.push({ 'description': 'test ..' });
 
   }
-  selectSearchLocation(location: any, type: any) {
+  selectSearchLocation(location: any) {
     // console.log('type', type);
     // if (type == 'pickup') {
     //   this.showList = false;

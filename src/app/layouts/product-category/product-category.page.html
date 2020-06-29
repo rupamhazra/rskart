@@ -1,9 +1,89 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>product-category</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-header></app-header>
 <ion-content>
-
+  <ion-card *ngFor="let item of items">
+    <ion-item lines="full">
+      <fa-icon  icon="laptop" class="icon-zoom"></fa-icon> &nbsp;
+      <ion-label size="small" >Echo & Alexa items </ion-label>
+      <fa-icon  [icon]="item.expanded? 'minus-circle':'plus-circle'" class="icon-zoom"  (click)="expandItem(item)" slot="end"></fa-icon>
+    </ion-item>
+    <ion-card-content class="padding-0-15-0-15">
+      <app-accordian expandHeight="300px" [expanded]="item.expanded">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-card>
+                
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col>
+                        <ion-icon ios="shirt-outline" md="shirt-sharp" class="accordian-icon-zoom"></ion-icon>
+                      </ion-col>
+                      <ion-col>
+                        <p>All new Amazon Echo</p>
+                      </ion-col>
+                    </ion-row>
+                    
+                    
+                  </ion-grid>
+                 
+                  
+                
+                
+              </ion-card>
+            </ion-col>
+            <ion-col>
+              <ion-card>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col>
+                      <ion-icon ios="bed-outline" md="bed-sharp" class="accordian-icon-zoom"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <p>All new Amazon Echo</p>
+                    </ion-col>
+                  </ion-row>
+                  
+                  
+                </ion-grid>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-card>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col>
+                      <ion-icon ios="bicycle-outline" md="bicycle-sharp" class="accordian-icon-zoom"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <p>All new Amazon Echo</p>
+                    </ion-col>
+                  </ion-row>
+                  
+                  
+                </ion-grid>
+              </ion-card>
+            </ion-col>
+            <ion-col>
+              <ion-card>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col>
+                      <ion-icon ios="book-outline" md="book-sharp" class="accordian-icon-zoom"></ion-icon>
+                    </ion-col>
+                    <ion-col>
+                      <p>All new Amazon Echo</p>
+                    </ion-col>
+                  </ion-row>
+                  
+                  
+                </ion-grid>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </app-accordian>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
